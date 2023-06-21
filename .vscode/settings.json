@@ -1,4 +1,7 @@
 {
     "liveServer.settings.port": 5502,
-    "editor.tabSize": 8
+    "editor.tabSize": 8,
+    "editor.cursorBlinking": "blink",
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 3
 }

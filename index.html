@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lexend:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <title>Profile</title>
-</head>
-<body>
-  
-  <!-- TO DO:
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lexend:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <title>Profile</title>
+  </head>
+
+<!-- TO DOs:
   
   make request list an actual ul with list
 
@@ -27,257 +29,233 @@
 
   clicking accept button increases connections count by one
 
-  when edit profile button is clicked, user name changes to 'Commander Benjamin Lafayette Sisko'
+  DONE - when edit profile button is clicked, user name changes to 'Commander Benjamin Lafayette Sisko' via function editName()
 
-  put header and main in container (.body-container?) with fixed width and remove change width and height parameters on nested elements appropriately (ie remove vw and vh and make pixels or percentages)
+  if main user name is Commander Benjamin Lafayette Sisko, when 'edit profile' button clicked, change back to Jane Doe
 
-  check if this fixes layout missalignment between header and main
+  DONE - put header and main in container (.body-container?) with fixed width - per Robert Ponce's advisement - and remove change width and height parameters on nested elements appropriately (ie remove vw and vh and make pixels or percentages). Upon trying this it became apparent that without separating the containers, the black band across the top will go away. Removing body-container.
+
+  FIXED - check if this fixes layout misalignment between header and main, it did but have to find another way without body container
 
   check what layout looks like on other devices
 
-  -->
+-->
 
-<!-- HEADER -->
   
-  <header>
-    <div class="header-container">
-      <h1>Profile</h1>
-      <ul>
-        <li>
-          Home
-        </li>
-        <li id="selected-menu-item">
-          My Profile
-        </li>
-        <li>
-          Find Connections
-        </li>
-      </ul>
-      <button id="sign-out-btn">
-        Sign Out
-      </button>
-    </div>    
-  </header>
+  <body>
+    
 
-<!-- MAIN PROFILE -->
+      <!-- HEADER -->
 
-  <main class="main-container">
-    <section class="main-col-1">
-      <div class="main-col-1-row-1">
-        <div class="main-col-1-row-1-head box-head">
+      <header>
+        <div class="header-container">
+          <h1>Profile</h1>
+          <ul class="nav-list">
+            <li>Home</li>
+            <li id="selected-menu-item">My Profile</li>
+            <li>Find Connections</li>
+          </ul>
+          <button id="sign-out-btn">Sign Out</button>
+        </div>
+      </header>
+
+      <!-- MAIN PROFILE -->
+      
+      <main class="main-container">
+        
+        <!-- left column in main -->
+        
+        <section class="main-col-1">
+          <div class="main-col-1-row-1">
+            <div class="main-col-1-row-1-head box-head">
+              <!-- empty turquoise -->
+            </div>
           
-          <!-- empty turquoise -->
-        
-        </div>
-        
-        <div class="main-col-1-row-1 box-main">
-          <img src="./images/jane-m.jpg" alt="Photo of Jane who appears to be a white lady wearing a blue hoody and glasses" class="main-profile-pic">
-          <div class="innermost-rows">
-            <h2>
-              Jane Doe
-            </h2>
-          </div>
-          <div class="innermost-rows">
-            <img src="./icons/map-marker.png" alt="map marker icon" id="map-marker-icon">
-            <h3>
-              Seattle
-            </h3>
-          </div>
-          <div class="innermost-rows">
-            
-            <ul class="profesh-identity-list margin-bottom">
-              <li>
-                Developer
-              </li>
-              <li>
-                |
-              </li>
-              <li>
-                Engineer
-              </li>
-              <li>
-                |
-              </li>
-              <li>
-                Problem Solver
-              </li>
-            </ul>
-
-          </div>
-          <div class="innermost-rows">
-            Master of shadows and the Internet
-          </div>
-          <div class="innermost-rows">
-            <img src="./icons/gear.png" alt="gear icon" id="gear-icon">
-            <a href="#">
-              <h6>
-                edit profile
-              </h6>
-            </a>
-          </div>
-        </div>
-      </div>
-
-<!-- USER PROFILE RESUME -->
-
-      <div class="main-col-1-row-2">
-        <div class="main-col-1-row-2-head box-head">
-          <h3>
-            Education
-          </h3>
-        </div>
-
-        <div class="main-col-1-row-2 box-main">
-          <div class="margin-top">
-            <div class="education-list-item">
-              Coding Dojo - Full Stack Bootcamp
-            </div>
-            <div class="innermost-rows">
-              <div class="date-grey">
-                Dec 2019 - Mar 2020
+            <div class="main-col-1-row-1 box-main">
+              <img
+                src="./images/jane-m.jpg"
+                alt="Photo of Jane who appears to be a white lady wearing a blue hoody and glasses"
+                class="main-profile-pic"
+              />
+              <div class="innermost-rows">
+                <h2 id="main-user">Jane Doe</h2>
               </div>
-            </div>
-          </div>
-          <div class="innermost-rows">
-            <h4>
-              Triple black belt in Python, MERN, and C#...
-            </h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- RIGHT ASIDE - CONNECTION REQUESTS -->
-
-    <aside class="main-col-2">
-      <div class="main-col-2-row-1">
-
-        <!-- box header -->
-
-        <div class="main-col-2-row-1-head box-head">
-          <div class="innermost-cols request-count">
-            <h3>2</h3>
-          </div>
-          <div class="innermost-cols">
-            <h3>Connection Requests</h3>
-          </div>
-        </div>
-
-        <!-- main section of box -->
-
-        <div class="main-col-2-row-1 box-main">
-          <div class="innermost-rows">
-            <div class="innermost-cols">
-              <img src="./images/todd-s.jpg" alt="Photo of Todd who appears to be a young white gut with blond hair and glasses" class="profile-pic">
-            </div>
-            <div class="innermost-cols">
-              <h3>
-                Todd E
-              </h3>
-            </div>
-            <div class="innermost-cols">
-              <img src="./icons/accept-circle.png" alt="icon of a check" class="accept-reject-btn">
-            </div>
-            <div class="innermost-cols">
-              <img src="./icons/close-circle.png" alt="icon of an x" class="accept-reject-btn">
-            </div> 
-          </div>
-          <div class="innermost-rows">
-            <div class="innermost-cols">
-              <img src="./images/phil-s.jpg" alt="Photo of Phil who appears to be a white guy with a receding hairline and glasses" class="profile-pic">
-            </div>
-            <div class="innermost-cols">
-              <h3>
-                Phil K
-              </h3>
-            </div>
-            <div class="innermost-cols">
-              <img src="./icons/accept-circle.png" alt="icon of a check" class="accept-reject-btn">
-            </div>
-            <div class="innermost-cols">
-              <img src="./icons/close-circle.png" alt="icon of an x" class="accept-reject-btn">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--  RIGHT ASIDE - YOUR CONNECTIONS -->
-
-      <div class="main-col-2-row-2">
-
-        <!-- box header -->
-
-        <div class="main-col-2-row-2-head box-head">
-          <div class="innermost-cols connection-count">
-            <h3>
-              500+
-            </h3>
-          </div>
-          <div class="innermost-cols">
-            <h3>
-              Your Connections
-            </h3>
-          </div>
-        </div>
-
-        <!-- main section of box -->
-
-        <div class="main-col-2-row-2 box-main">
-          <div class="innermost-rows">
-            <div class="innermost-cols">
-              <img src="./images/adrien-s.jpg" alt="Photo of Adrien who appears to be a young white person wearing glasses" class="profile-pic">
-            </div>
-            <div class="innermost-cols">
-              <h3>
-                Adrien D
-              </h3>
-            </div>
-          </div>
-          <div class="innermost-rows">
-            <div class="innermost-cols">
-              <img src="./images/anne-s.jpg" alt="Photo of Anne who has long dark hair and is wearing a black blazer" class="profile-pic">
-            </div>
-            <div class="innermost-cols">
-              <h3>
-                Anne J
-              </h3>
-            </div>
-          </div>
-          <div class="innermost-rows">
-            <div class="innermost-cols">
-              <img src="./images/alayne-s.jpg" alt="Photo of Alayne who has long hair and wearing a turtle neck" class="profile-pic">
-            </div>
-            <div class="innermost-cols">
-              <h3>
-                Alayne T
-              </h3>
-            </div>
-          </div>
-          <div class="innermost-rows">
-            <div class="innermost-cols">
-              <img src="./images/arry-s.jpg" alt="Selfie of Arry with red laser eyes" class="profile-pic">
-            </div>
-            <div class="innermost-cols">
-              <h3>
-                Arry Y
-              </h3>
-            </div>
-          </div>
-          <div class="box-foot">
-            <div class="innermost-rows">
-              <div class="innermost-cols">
+              <div class="innermost-rows">
+                <img
+                  src="./icons/map-marker.png"
+                  alt="map marker icon"
+                  id="map-marker-icon"
+                />
+                <h3>Seattle</h3>
+              </div>
+              <div class="innermost-rows">
+                <ul class="profesh-identity-list margin-bottom">
+                  <li>Developer</li>
+                  <li>|</li>
+                  <li>Engineer</li>
+                  <li>|</li>
+                  <li>Problem Solver</li>
+                </ul>
+              </div>
+              <div class="innermost-rows">Master of shadows and the Internet</div>
+              <div class="innermost-rows">
+                <img src="./icons/gear.png" alt="gear icon" id="gear-icon"/>
                 <a href="#">
-                  <h6>
-                    View More
-                  </h6>
+                  <h6 onclick="editName()">edit profile</h6>
                 </a>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </aside>
-  </main>
-  
-</body>
+        
+          <!-- USER PROFILE RESUME -->
+        
+          <div class="main-col-1-row-2">
+            <div class="main-col-1-row-2-head box-head">
+              <h3>Education</h3>
+            </div>
+          
+            <div class="main-col-1-row-2 box-main">
+              <div class="margin-top">
+                <div class="education-list-item">
+                  Coding Dojo - Full Stack Bootcamp
+                </div>
+                <div class="innermost-rows">
+                  <div class="date-grey">Dec 2019 - Mar 2020</div>
+                </div>
+              </div>
+              <div class="innermost-rows">
+                <h4>Triple black belt in Python, MERN, and C#...</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <!-- RIGHT ASIDE - CONNECTION REQUESTS -->
+      
+        <aside class="main-col-2">
+          <div class="main-col-2-row-1">
+            <!-- box header -->
+          
+            <div class="main-col-2-row-1-head box-head">
+              <div class="innermost-cols request-count">
+                <h3>2</h3>
+              </div>
+              <div class="innermost-cols">
+                <h3>Connection Requests</h3>
+              </div>
+            </div>
+          
+            <!-- main section of box -->
+          
+            <div class="main-col-2-row-1 box-main">
+              <div class="innermost-rows">
+                
+                <ul class="request-list">
+                  <li>
+                    <div class="innermost-cols">
+                      <img src="./images/todd-s.jpg" alt="Photo of Todd who appears to be a young white gut with blond hair and glasses" class="profile-pic"/>
+                      <h3>Todd E</h3>
+                    </div>
+                    <div class="innermost-cols">
+                      <img src="./icons/accept-circle.png" alt="icon of a check" class="accept-reject-btn"/>
+                      <img src="./icons/close-circle.png" alt="icon of an x" class="accept-reject-btn"/>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="innermost-cols">
+                      <img src="./images/phil-s.jpg"
+                      alt="Photo of Phil who appears to be a white guy with a receding hairline and glasses" class="profile-pic"/>
+                      <h3>Phil K</h3>
+                    </div>
+                    <div class="innermost-cols">
+                      <img src="./icons/accept-circle.png" alt="icon of a check" class="accept-reject-btn"/>
+                      <img src="./icons/close-circle.png" alt="icon of an x" class="accept-reject-btn"/>
+                    </div>
+                  </li>
+                </ul>            
+              </div>              
+            </div>
+          </div>
+        
+          <!--  RIGHT ASIDE - YOUR CONNECTIONS -->
+        
+          <div class="main-col-2-row-2">
+            <!-- box header -->
+          
+            <div class="main-col-2-row-2-head box-head">
+              <div class="innermost-cols connection-count">
+                <h3>500+</h3>
+              </div>
+              <div class="innermost-cols">
+                <h3>Your Connections</h3>
+              </div>
+            </div>
+          
+            <!-- main section of box -->
+          
+            <div class="main-col-2-row-2 box-main">
+              <div class="innermost-rows">
+                <div class="innermost-cols">
+                  <img
+                    src="./images/adrien-s.jpg"
+                    alt="Photo of Adrien who appears to be a young white person wearing glasses"
+                    class="profile-pic"
+                  />
+                </div>
+                <div class="innermost-cols">
+                  <h3>Adrien D</h3>
+                </div>
+              </div>
+              <div class="innermost-rows">
+                <div class="innermost-cols">
+                  <img
+                    src="./images/anne-s.jpg"
+                    alt="Photo of Anne who has long dark hair and is wearing a black blazer"
+                    class="profile-pic"
+                  />
+                </div>
+                <div class="innermost-cols">
+                  <h3>Anne J</h3>
+                </div>
+              </div>
+              <div class="innermost-rows">
+                <div class="innermost-cols">
+                  <img
+                    src="./images/alayne-s.jpg"
+                    alt="Photo of Alayne who has long hair and wearing a turtle neck"
+                    class="profile-pic"
+                  />
+                </div>
+                <div class="innermost-cols">
+                  <h3>Alayne T</h3>
+                </div>
+              </div>
+              <div class="innermost-rows">
+                <div class="innermost-cols">
+                  <img
+                    src="./images/arry-s.jpg"
+                    alt="Selfie of Arry with red laser eyes"
+                    class="profile-pic"
+                  />
+                </div>
+                <div class="innermost-cols">
+                  <h3>Arry Y</h3>
+                </div>
+              </div>
+              <div class="box-foot">
+                <div class="innermost-rows">
+                  <div class="innermost-cols">
+                    <a href="#">
+                      <h6>View More</h6>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    
+    <script src="script.js"></script>
+  </body>
 </html>
