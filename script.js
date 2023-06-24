@@ -41,14 +41,7 @@ function editName() {
 function removeRequest(id) {
         let element = document.getElementById(id);
         element.remove();
-        
-        function decrementRequestCount() {
-                let requestCount = document.getElementById("request-count").innerText;requestCount = requestCount--;
-        }
-        if () {
-                // increment innerText of h3 with id of 'connection-count'
-        }
-        
 }
 
+// decrement request-count
 // clicking accept button increments #connection-count. must this be a new func?
